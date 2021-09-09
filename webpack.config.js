@@ -24,7 +24,7 @@ module.exports= {
                 test: /\.html$/,
                 use: [
                     {
-                    loader: 'html-loader'
+                        loader: 'html-loader'
                     }
                 ]
             },
@@ -36,6 +36,17 @@ module.exports= {
                     },
                     'css-loader',
                     'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|gif|jpg)$/,
+                use: [
+                    {
+                        'loader': 'file-loader',
+                        options: {
+                            name: 'assets/[hash].[ext]'
+                        }
+                    }
                 ]
             }
         ]
